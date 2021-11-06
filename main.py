@@ -23,7 +23,6 @@ pc = 0
 mem = [0] * 30_000
 ptr = 0
 count = 0
-print(len(code))
 while pc < len(code):
     count += 1
     op = code[pc]
