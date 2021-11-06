@@ -109,7 +109,7 @@ int run(BC bytecode) {
       case '+': mem[ptr]++; break;
       case '-': mem[ptr]--; break;
       case '.': putchar(mem[ptr]); fflush(NULL); break;
-      case ',': mem[ptr] = getchar(); break;
+      case ',': { int c = getchar(); if (c != EOF) mem[ptr] = c; break; }
       case 'j': {
           bool want = code[pc++];
           bool should_jump = (mem[ptr] == 0) == want;
